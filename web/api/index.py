@@ -1,7 +1,11 @@
 import json
 import os
-from datetime import date
+import sys
 
+# Dynamically add the src directory to the python path for Vercel
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'src')))
+
+from datetime import date
 import pandas as pd
 
 # Local imports
