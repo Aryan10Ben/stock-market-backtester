@@ -1,5 +1,7 @@
 # Stock Market Backtesting System
 
+**Live Demo (Vercel):** [https://stock-market-backtester.vercel.app](https://stock-market-backtester.vercel.app) *(Note: History saving requires `DATABASE_URL` to be configured in Vercel settings)*
+
 A production-quality Python backtesting framework for evaluating trading strategies on historical stock data. Built with clean layered architecture, input validation, deterministic simulation, and presentation-ready output.
 
 ## Features
