@@ -5,7 +5,6 @@ from datetime import date
 import pandas as pd
 
 # Local imports
-from api.db import get_connection, get_price_data, save_price_data
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
