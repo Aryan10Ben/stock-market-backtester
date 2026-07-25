@@ -1,0 +1,9 @@
+fastapi>=0.100.0
+psycopg2-binary>=2.9.9
+pandas>=2.1.0
+numpy>=1.26.0
+yfinance>=0.2.36,<0.3
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+curl_cffi>=0.7.0
+../src
