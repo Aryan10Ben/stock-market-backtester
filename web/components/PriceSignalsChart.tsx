@@ -22,7 +22,8 @@ export default function PriceSignalsChart({ data }: { data: BacktestResponse }) 
   const df = data.priceData;
   const dates = df.map((d) => d.Date);
 
-  const traces = [
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const traces: any[] = [
     {
       x: dates,
       open: df.map((d) => d.Open),

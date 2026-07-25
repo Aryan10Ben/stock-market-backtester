@@ -16,7 +16,8 @@ export default function EquityCurveChart({ data }: { data: BacktestResponse }) {
   const portfolio = data.equityCurve.map((p) => p.totalValue);
   const benchmark = data.equityCurve.map((p) => p.benchmarkValue);
 
-  const traces = [
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const traces: any[] = [
     {
       x: dates,
       y: portfolio,

@@ -10,9 +10,10 @@ export default function SummaryCards({
 }) {
   if (!metrics) return null;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const openQty =
     equityCurve && equityCurve.length > 0
-      ? (equityCurve[equityCurve.length - 1] as EquityPoint).portfolioQty || 0
+      ? (equityCurve[equityCurve.length - 1] as any).portfolioQty || 0
       : 0;
 
   const cards = [

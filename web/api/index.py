@@ -58,7 +58,7 @@ def health_check():
 def fetch_data_with_cache(ticker: str, start_date: date, end_date: date) -> tuple[pd.DataFrame, str]:
     """Check Neon DB, fallback to yfinance/stooq."""
     # 1. Check Neon DB
-    from api.db import get_price_data, save_price_data
+    from db.client import get_price_data, save_price_data
     df = get_price_data(ticker, start_date, end_date)
     if not df.empty and df.index.min().date() <= start_date and df.index.max().date() >= end_date:
         return df, "price_cache"
@@ -174,7 +174,7 @@ def run_backtest(req: BacktestRequest):
         }
 
         # Save History
-        from api.db import save_run_to_db
+        from db.client import save_run_to_db
         save_run_to_db(req.dict(by_alias=True), metrics)
 
         def clean_nans(obj):
@@ -194,6 +194,6 @@ def run_backtest(req: BacktestRequest):
 
 @app.get("/api/history")
 def get_history():
-    from api.db import get_history_runs
+    from db.client import get_history_runs
     runs = get_history_runs()
     return {"runs": runs}

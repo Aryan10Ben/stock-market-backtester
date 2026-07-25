@@ -26,7 +26,8 @@ export default function DrawdownChart({ data }: { data: BacktestResponse }) {
     { drawdowns: [] as number[], peak: 0 }
   );
 
-  const traces = [
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const traces: any[] = [
     {
       x: dates,
       y: drawdowns,
